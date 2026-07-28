@@ -1,0 +1,97 @@
+############################################################
+# AscendWing 板子环境快照 - 192.168.137.5 (EA200I-DK2 / Atlas 200I A2 310B)
+# 生成时间: 2026-07-23 (由打包脚本采集)
+# 注: 本视觉包运行仅需 numpy/onnx/opencv2；板上其他包为历史遗留，视觉部分不依赖。
+############################################################
+
+===== 1. 操作系统 =====
+NAME="openEuler"
+ID="openEuler"
+VERSION_ID="22.03"
+ANSI_COLOR="0;31"
+
+VERSION="22.03 LTS dracut-055-4.oe2203"
+PRETTY_NAME="openEuler 22.03 LTS dracut-055-4.oe2203 (Initramfs)"
+DRACUT_VERSION="055-4.oe2203"
+
+===== 2. 内核 / 架构 =====
+Linux davinci-mini 6.6.0-72.0.0.76.h21510.1170.eulerosv2r15.ascend.aarch64 #1 SMP Fri Mar 20 18:12:34 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+arch: aarch64
+
+===== 3. Python =====
+Python 3.9.9
+/usr/bin/python3
+/usr/bin/pip3
+--- 关键 pip 包 ---
+numpy                  1.24.4
+onnx                   1.19.1
+
+===== 4. CANN / Ascend 工具链 =====
+--- /usr/local/Ascend 目录 ---
+Ascend-cann-310b-ops_9.0.0_linux-aarch64.run
+Ascend-cann-toolkit_9.0.0_linux-aarch64.run
+ascend-toolkit
+cann
+cann-9.0.0
+cann-9.1.0-beta.1
+driver
+include
+lost+found
+mxIndex
+mxIndex-26.0.0
+--- cann-9.0.0 version ---
+--- ascend-toolkit/latest 指向 ---
+/usr/local/Ascend/cann-9.0.0
+--- set_env.sh ---
+lrwxrwxrwx 1 root root 50 Jun 14 07:12 /usr/local/Ascend/ascend-toolkit/set_env.sh -> /usr/local/Ascend/ascend-toolkit/latest/set_env.sh
+
+===== 5. mxVision / mxIndex =====
+mxIndex
+mxIndex-26.0.0
+SDK mxIndex:26.0.0
+mxIndex version:26.0.0
+Plat:linux aarch64
+/usr/local/Ascend/mxIndex-26.0.0/version.info
+
+===== 6. NPU 状态 (npu-smi) =====
++--------------------------------------------------------------------------------------------------------+
+| npu-smi 26.0.rc1                                 Version: 26.0.rc1                                     |
++-------------------------------+-----------------+------------------------------------------------------+
+| NPU     Name                  | Health          | Power(W)     Temp(C)           Hugepages-Usage(page) |
+| Chip    Device                | Bus-Id          | AICore(%)    Memory-Usage(MB)                        |
++===============================+=================+======================================================+
+| 0       310B1                 | OK              | 6.5          40                74    / 74            |
+| 0       0                     | NA              | 17           4931 / 11577                            |
++===============================+=================+======================================================+
+
+===== 8. AscendWing 工作目录 =====
+drwxr-xr-x 9 root root 4096 Jun 18 17:29 /root/AscendWing
+--- 顶层 ---
+Makefile
+README.md
+STARTUP.md
+aipp_rgb_norm.cfg
+aipp_yuv_pad32.cfg
+baseline_v2
+build
+final_v1
+install
+models
+run.sh
+scripts
+src
+stop.sh
+yolo26s_baseline_opset12_yuv.om
+yolo26s_baseline_opset13_yuv.om
+yolo26s_visdrone_p2p4_640.om
+yolo26s_visdrone_p2p4_640_yuv.om
+yolov5s_ball_640.om
+yolov5s_ball_640_yuv.om
+yolov5s_pingpang.om
+
+===== 9. 串口设备 =====
+crw-rw---- 1 root dialout 204, 66 Jan  1  1970 /dev/ttyAMA2
+
+===== 10. ROS 检查 (视觉包不依赖 ROS / 外部控制链路) =====
+ROS_DISTRO=<未安装/未source>
+/opt/ros 不存在 (本视觉包不依赖 ROS)

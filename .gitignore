@@ -1,0 +1,19 @@
+# Build artifacts
+build/
+install/
+__pycache__/
+*.pyc
+*.pyo
+*.bak
+*.bak.*
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# 权重文件（从 Release 下，不提交）
+*.om
+*.onnx
